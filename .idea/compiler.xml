@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="pockectstate_appapi" />
+        <module name="PockectStateApi_Common" />
+        <module name="PockectStateApi_Entity" />
+        <module name="PockectStateApi_Eureka" />
+        <module name="PockectStateApi_ServerLogin" />
+        <module name="pockectstateapi_serveruser" />
+        <module name="pockectstatemsg_servermsg" />
+        <module name="PocketStateApi_ServerGoods" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="PockectStateApi_Common" options="-parameters" />
+      <module name="PockectStateApi_Entity" options="-parameters" />
+      <module name="PockectStateApi_Eureka" options="-parameters" />
+      <module name="PockectStateApi_ServerLogin" options="-parameters" />
+      <module name="PocketStateApi_ServerGoods" options="-parameters" />
+      <module name="pockectstate_appapi" options="-parameters" />
+      <module name="pockectstateapi_serveruser" options="-parameters" />
+      <module name="pockectstatemsg_servermsg" options="-parameters" />
+    </option>
+  </component>
+</project>
