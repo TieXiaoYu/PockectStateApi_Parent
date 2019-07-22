@@ -7,39 +7,21 @@
         <groupId>com.pocketstate.api</groupId>
         <version>0.1</version>
     </parent>
-    <groupId>com.pockectstate.messages</groupId>
-    <artifactId>pockectstatemsg_servermsg</artifactId>
-    <version>0.1</version>
-    <name>pockectstatemsg_servermsg</name>
+    <groupId>com.pockectstate.search</groupId>
+    <artifactId>pockectstateapi_serversearch</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>pockectstateapi_serversearch</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
         <java.version>1.8</java.version>
-        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+        <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-            <version>1.1.10</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -47,8 +29,14 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.pocketstate.api</groupId>
-            <artifactId>PockectStateApi_Entity</artifactId>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-elasticsearch</artifactId>
+            <version>3.1.8.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>com.pocketstate.api</groupId>
@@ -56,9 +44,23 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
             <version>2.1.6.RELEASE</version>
         </dependency>
+        <!--<dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch-x-content</artifactId>
+            <version>6.5.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>transport</artifactId>
+            <version>6.5.4</version>
+        </dependency>-->
     </dependencies>
 
     <dependencyManagement>

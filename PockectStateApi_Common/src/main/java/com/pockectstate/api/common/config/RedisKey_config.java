@@ -1,5 +1,7 @@
 package com.pockectstate.api.common.config;
 
+import com.sun.istack.internal.FinalArrayList;
+
 /**
  * @AUTHOR 铁小雨
  * @CREATE 2019-07-10 20:42
@@ -25,4 +27,11 @@ public class RedisKey_config {
     //记录冻结的账号
     public static String LOGINFORCE="loginforce:";//phone 失效期15分钟
 
+    //记录商品信息变化
+    public static final String ESHASHADD="esgoods:add";//新增  字段为商品Id 值为ES商品对象的JSON字符串
+    public static final String ESHASHADDSLAVE="esgoods:add:slave";//新增  双key机制
+    public static final String ESHASHUPDATE="esgoods:update";//修改
+    public static final String ESHASHUPDATESLAVE="esgoods:update:slave";//修改
+    public static final String ESHASHDEL="esgoods:del";//删除
+    public static final String ESHASHDELSLAVE="esgoods:del:slave";//删除
 }
