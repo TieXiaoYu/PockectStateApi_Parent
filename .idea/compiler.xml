@@ -11,6 +11,7 @@
         <module name="PockectStateApi_Entity" />
         <module name="PockectStateApi_Eureka" />
         <module name="PockectStateApi_ServerLogin" />
+        <module name="pockectstateapi_serverorder" />
         <module name="PockectStateApi_ServerSearch" />
         <module name="pockectstateapi_serveruser" />
         <module name="pockectstatemsg_servermsg" />
@@ -27,6 +28,7 @@
       <module name="PockectStateApi_ServerSearch" options="-parameters" />
       <module name="PocketStateApi_ServerGoods" options="-parameters" />
       <module name="pockectstate_appapi" options="-parameters" />
+      <module name="pockectstateapi_serverorder" options="-parameters" />
       <module name="pockectstateapi_serveruser" options="-parameters" />
       <module name="pockectstatemsg_servermsg" options="-parameters" />
     </option>

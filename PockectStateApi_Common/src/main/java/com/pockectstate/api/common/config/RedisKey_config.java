@@ -20,6 +20,7 @@ public class RedisKey_config {
     public static final String VCODE_FOUR="vc_four:";
     //记录登录令牌相关的Key
     public static final String JWTTOKEN_DEVICE="jwtdevice";//手机号_设备号_设备的mac地址
+    public static final String JWTTOKEN_TYPE="jwtdevicetype:";//手机号_设备类型
     public static final String JWTTOKEN_TOKEN="jwttoken";//令牌
 
     //记录登录失败次数

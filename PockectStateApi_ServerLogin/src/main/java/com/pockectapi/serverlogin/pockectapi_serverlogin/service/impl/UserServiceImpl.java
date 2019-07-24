@@ -25,6 +25,7 @@ import java.util.Set;
 /**
  * @AUTHOR 铁小雨
  * @CREATE 2019-07-11 19:32
+ * 多设备唯一登录  相同设备只能在线一个
  */
 @Service
 public class UserServiceImpl implements UserService {
@@ -129,15 +130,22 @@ public class UserServiceImpl implements UserService {
                 //再检验手机号和设备对应的令牌和当前令牌是否一致
                 String json = JWT_Util.parseJWT(token);
                 JWTToken jwtToken = JSON.parseObject(json,JWTToken.class);
-                String dk = DeviceKey_Util.createKey(jwtToken);
-                if(jedisUtil.exists(RedisKey_config.JWTTOKEN_DEVICE+dk.toString())){
-                    //取出设备对应的令牌
-                    String t = jedisUtil.get(RedisKey_config.JWTTOKEN_DEVICE+dk.toString());
+                //校验同种设备下是否为当前的令牌
+                if(jedisUtil.exists(RedisKey_config.JWTTOKEN_TYPE+"_"+jwtToken.getPhone()+"_"+jwtToken.getDevice())){
+                    String t=jedisUtil.get(RedisKey_config.JWTTOKEN_TYPE+"_"+jwtToken.getPhone()+"_"+jwtToken.getDevice());
                     if(Objects.equals(t,token)){
-                        return R.setOK("OK",null);
-                    }else {
-                        jedisUtil.del(RedisKey_config.JWTTOKEN_TOKEN+token);
-                        return R.setERROR("已经在其他设备上登录,被迫下线",null);
+                        //校验相同设备下的令牌是否一致
+                        String dk=DeviceKey_Util.createKey(jwtToken);
+                        if(jedisUtil.exists(RedisKey_config.JWTTOKEN_DEVICE+dk)){
+                            //取出 设备对应的令牌
+                            String t1=jedisUtil.get(RedisKey_config.JWTTOKEN_DEVICE+dk);
+                            if(Objects.equals(t1,token)){
+                                return R.setOK("OK",null);
+                            }else {
+                                jedisUtil.del(RedisKey_config.JWTTOKEN_TOKEN+token);
+                                return R.setERROR("已经在其他设备上登录，被迫下线",null);
+                            }
+                        }
                     }
                 }
             }
