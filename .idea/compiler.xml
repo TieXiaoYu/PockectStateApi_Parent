@@ -15,6 +15,7 @@
         <module name="PockectStateApi_ServerSearch" />
         <module name="pockectstateapi_serveruser" />
         <module name="pockectstatemsg_servermsg" />
+        <module name="PockectStatePay_Api" />
         <module name="PocketStateApi_ServerGoods" />
       </profile>
     </annotationProcessing>
@@ -26,6 +27,7 @@
       <module name="PockectStateApi_Eureka" options="-parameters" />
       <module name="PockectStateApi_ServerLogin" options="-parameters" />
       <module name="PockectStateApi_ServerSearch" options="-parameters" />
+      <module name="PockectStatePay_Api" options="-parameters" />
       <module name="PocketStateApi_ServerGoods" options="-parameters" />
       <module name="pockectstate_appapi" options="-parameters" />
       <module name="pockectstateapi_serverorder" options="-parameters" />

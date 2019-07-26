@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/PockectStateMsg_ServerMsg/pom.xml" />
         <option value="$PROJECT_DIR$/PockectStateApi_ServerSearch/pom.xml" />
         <option value="$PROJECT_DIR$/PockectStateApi_ServerOrder/pom.xml" />
+        <option value="$PROJECT_DIR$/PockectStatePay_Api/pom.xml" />
       </list>
     </option>
   </component>
